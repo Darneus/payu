@@ -45,6 +45,54 @@ class Order {
 		$this->customerIp = $_SERVER['REMOTE_ADDR'];
 	}
 
+	public function getId() : string {
+		return $this->id;
+	}
+
+	public function setId(string $id) : void {
+		$this->id = $id;
+	}
+
+	public function getCustomerIp() : string {
+		return $this->customerIp;
+	}
+
+	public function setCustomerIp(string $customerIp) : void {
+		$this->customerIp = $customerIp;
+	}
+
+	public function getDescription() : string {
+		return $this->description;
+	}
+
+	public function setDescription(string $description) : void {
+		$this->description = $description;
+	}
+
+	public function getCurrencyCode() : string {
+		return $this->currencyCode;
+	}
+
+	public function setCurrencyCode(string $currencyCode) : void {
+		$this->currencyCode = $currencyCode;
+	}
+
+	public function getTotalAmount() : int {
+		return $this->totalAmount;
+	}
+
+	public function setTotalAmount(int $totalAmount) : void {
+		$this->totalAmount = $totalAmount;
+	}
+
+	public function getProducts() : array {
+		return $this->products;
+	}
+
+	public function setProducts(array $products) : void {
+		$this->products = $products;
+	}
+
 	public function setContinueUrl(string $continueUrl) : void {
 		$this->continueUrl = $continueUrl;
 	}
