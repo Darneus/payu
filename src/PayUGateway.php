@@ -46,6 +46,9 @@ class PayUGateway {
 	}
 
 	public function createPayment(Order $order) : NewPaymentResponse {
+		if ($this->config->isTest()) {
+			$order->setCurrencyCode('PLN');
+		}
 		return new NewPaymentResponse(OpenPayU_Order::create($order->toArray()));
 	}
 
