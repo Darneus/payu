@@ -3,6 +3,7 @@
 namespace Darneus\PayU\DI;
 
 use Darneus\PayU\Exceptions\InvalidConfigurationException;
+use Darneus\PayU\PayUGateway;
 use Nette\DI\CompilerExtension;
 use OauthCacheFile;
 use OauthGrantType;
@@ -68,5 +69,9 @@ class PayUExtension extends CompilerExtension {
 			->addSetup('setGrantType', [$config['grantType']])
 			->addSetup('setEmail', [$config['email']])
 			->addSetup('setExtCustomerId', [$config['extCustomerId']]);
+
+		$builder->addDefinition($this->prefix('payuGateway'))
+			->setType(PayUGateway::class);
+
 	}
 }
