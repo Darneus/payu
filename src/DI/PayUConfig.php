@@ -40,7 +40,7 @@ class PayUConfig {
 	}
 
 	public function getPosId() : ?int {
-		return $this->posId ?? $this->clientId;
+		return $this->posId;
 	}
 
 	public function setPosId(?int $posId) : void {

@@ -61,7 +61,7 @@ class PayUExtension extends CompilerExtension {
 		$builder->addDefinition($this->prefix('config'))
 			->setType(PayUConfig::class)
 			->addSetup('setTest', [$config['test']])
-			->addSetup('setPosId', [$config['posId']])
+			->addSetup('setPosId', [$config['posId'] !== 0 ? $config['posId'] : $config['clientId']])
 			->addSetup('setClientId', [$config['clientId']])
 			->addSetup('setSecondKey', [$config['secondKey']])
 			->addSetup('setClientSecret', [$config['clientSecret']])
