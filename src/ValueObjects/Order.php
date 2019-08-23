@@ -57,6 +57,14 @@ class Order {
 		$this->merchantPosId = $merchantPosId;
 	}
 
+	public function setBuyer(Buyer $buyer) : void {
+		$this->buyer = $buyer;
+	}
+
+	public function addProduct(Product $product) : void {
+		$this->products[] = $product;
+	}
+
 	public function toArray() : array {
 		$order = [
 			'continueUrl' 	=> $this->continueUrl,
