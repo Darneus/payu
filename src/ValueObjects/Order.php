@@ -36,7 +36,7 @@ class Order {
 	/** @var Buyer */
 	private $buyer;
 
-	public function __construct(int $id, string $description, string $currencyCode, int $totalAmount) {
+	public function __construct(string $id, string $description, string $currencyCode, int $totalAmount) {
 		$this->id = $id;
 		$this->description = $description;
 		$this->currencyCode = $currencyCode;
