@@ -49,7 +49,7 @@ class PayUGateway {
 		if ($this->config->isTest()) {
 			$order->setCurrencyCode('PLN');
 		}
-		return new NewPaymentResponse(OpenPayU_Order::create($order->toArray()));
+		return new NewPaymentResponse(OpenPayU_Order::create($order->toArray())->getResponse());
 	}
 
 	public function getPaymentData(string $paymentId) : OpenPayU_Result {
