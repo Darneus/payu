@@ -29,6 +29,8 @@ class PayUGateway {
 		//set Sandbox Environment
 		if ($this->config->isTest()) {
 			OpenPayU_Configuration::setEnvironment('sandbox');
+		} else {
+			OpenPayU_Configuration::setEnvironment('secure');
 		}
 
 		OpenPayU_Configuration::setMerchantPosId($this->config->getPosId());
