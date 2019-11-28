@@ -20,7 +20,7 @@
     },
     "require": {
         "php": ">=7.1",
-        "nette/di": "~2.3|^2.4",
+        "nette/di": "~2.3|^2.4|^3.0",
         "openpayu/openpayu": "^2.2"
     }
 }
