@@ -4,6 +4,8 @@ namespace Darneus\PayU\ValueObjects;
 
 class Buyer {
 
+	const DEFAULT_LANGUAGE = 'en';
+
 	/** @var string */
 	private $email;
 
@@ -15,6 +17,9 @@ class Buyer {
 
 	/** @var string */
 	private $lastName;
+
+	/** @var string */
+	private $language;
 
 	public function __construct(string $email, string $phone, string $firstName, string $lastName) {
 		$this->email = $email;
@@ -55,12 +60,21 @@ class Buyer {
 		$this->lastName = $lastName;
 	}
 
+	public function getLanguage(): string {
+		return $this->language;
+	}
+
+	public function setLanguage(string $language): void	{
+		$this->language = $language;
+	}
+
 	public function toArray() : array {
 		return [
 			'email' => 		$this->email,
 			'phone' => 		$this->phone,
 			'firstName' => 	$this->firstName,
-			'lastName' => 	$this->lastName
+			'lastName' => 	$this->lastName,
+			'language' =>   $this->language ?? static::DEFAULT_LANGUAGE
 		];
 	}
 }
