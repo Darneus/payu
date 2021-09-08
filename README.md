@@ -34,7 +34,7 @@ payUExtension:
     public function hanlePay() : ?string {
         $payUOrder = new Order('1234', 'Order 1234', 'PLN', 10000);
         $payUOrder->setContinueUrl($this->link('//return!'));
-        $payUOrder->setBuyer(new Buyer(cust@mail.com, 123456789, 'John', 'Doe'));
+        $payUOrder->setBuyer(new Buyer('cust@mail.com', 123456789, 'John', 'Doe'));
 
         $payUOrder->addProduct(new Product('product', 10000, 1);
 		
